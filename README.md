@@ -1,13 +1,14 @@
-# Sample Hardhat Project
+# Simple ERC-20 contract with possibility to set max emission and provide minter role
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Implementation of the ERC20 Open Zeppelin based contract with next possibilities:
+* Set max emission of tokens. Owner can set and amount of tokens, when it will be reached, mint is not possible
+* Set unlimited emission of tokens. `_maxEmission` 0 amount = no emission limit
+* Change max emission, but not less than total token supply
+* Set and revoke minter role for user or contract account. Can be used in staking contracts
 
-Try running some of the following tasks:
+Try running some followings:
 
 ```shell
-npx hardhat help
 npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
 npx hardhat run scripts/deploy.js
 ```
